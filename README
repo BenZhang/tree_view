@@ -1,13 +1,15 @@
 TreeView
 ========
 
-Introduction goes here.
+TreeView is a little plugin to generate a tree view. TreeView is implemented by jQuery and jQuery drawing plugin call 
 
 
 Example
 =======
 
-Example goes here.
+If you have a model with tree structure (the model must has a column name parent_id), you can simple invoke 
+
+<%= build_tree_view(model, attribute name) %> from the view.
 
 
-Copyright (c) 2011 [name of plugin creator], released under the MIT license
+Copyright (c) 2011 Ben Zhang, released under the MIT license
