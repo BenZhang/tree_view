@@ -11,5 +11,7 @@ If you have a model with tree structure (the model must has a column name parent
 
 <%= build_tree_view(model, attribute name) %> from the view.
 
+The attributes name is the name of the attribute that you want to display on the tree node.
+
 
 Copyright (c) 2011 Ben Zhang, released under the MIT license
