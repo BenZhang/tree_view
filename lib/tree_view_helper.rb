@@ -73,7 +73,7 @@ module TreeViewHelper
     return [result, script]
   end
 
-  def form_tree_view(object, name, options = {})
+  def build_tree_view(object, name, options = {})
     result, w_num, h_num = print_tree(object, name), get_max_nodes_count(object), get_max_depth(object, 0)
     width, height = w_num*30 + w_num*200, h_num*61 + h_num*50 + 50
     wrap(result[0], result[1], width, height)
