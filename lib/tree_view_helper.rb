@@ -1,7 +1,7 @@
 module TreeViewHelper
   def wrap(content, js, width, height)
     <<-EOF
-    <script type="text/css">
+    <style type="text/css">
       .treeview, .treeview ul {
           margin: 0;
           padding: 0;
@@ -32,7 +32,11 @@ module TreeViewHelper
           top:-1px;
           left:-2px;
       }
-    </script>
+    </style>
+    <script src="/javascripts/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.svg.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.drawinglibrary.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.dimensions.min.js" type="text/javascript"></script>
     <div id="svgbasics" style="position:absolute;left:0px;top:80px;width:#{width}px;height:#{height}px;border:solid 0px #484;"></div>
     <div>
     <div id="tree-view-content" style="width:#{width}px;">
@@ -42,6 +46,31 @@ module TreeViewHelper
     </div>
     <script type="text/javascript">
     #{js}
+    function svgDrawLine( eTarget, eSource ) {				
+        var $source = eTarget;
+        var $target = eSource;
+        var originX = $source.offset().left + (($source.width()+20)/2);
+        var originY = $source.offset().top + $source.height() - 120 + 20;
+        var endingX = $target.offset().left + (($source.width()+20)/2);
+        var endingY = $target.offset().top - 120;
+        // draw lines
+        var svg = $("#svgbasics");
+
+        var space = ((endingY-originY)/2);
+        // drawLine(X1, Y1, X2, Y2);
+        svg.drawLine(originX, originY+35, originX , originY + space + 40, {
+            'color': '#8db2e3',
+            'stroke': 2
+        }); // beginning
+        svg.drawLine(originX, originY + space + 40, endingX, endingY - space + 40, {
+            'color': '#8db2e3',
+            'stroke': 1.5
+        }); // diagonal line
+        svg.drawLine(endingX, endingY - space + 40, endingX, endingY + 40, {
+            'color': '#8db2e3',
+            'stroke': 2
+        }); // ending
+    }
     </script>
     </div>
     EOF
