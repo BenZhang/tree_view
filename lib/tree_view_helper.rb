@@ -76,9 +76,10 @@ module TreeViewHelper
     EOF
   end
 
-  def print_tree(object, name)
+  def print_tree(object, name, options = {})
     root = object
-    children = object.class.find(:all, :conditions => "parent_id = #{object.id}", :order => "#{name}")
+    parentid = options[:parent_name] || "parent_id"
+    children = object.class.find(:all, :conditions => "#{parentid} = #{object.id}", :order => "#{name}")
     result = <<-EOF
     <li>
     <span id='pos#{root.id}'>
