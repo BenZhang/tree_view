@@ -78,8 +78,7 @@ module TreeViewHelper
 
   def print_tree(object, name, options = {})
     root = object
-    parentid = options[:parent_name] || "parent_id"
-    children = object.class.find(:all, :conditions => "#{parentid} = #{object.id}", :order => "#{name}")
+    children = object.children
     result = <<-EOF
     <li>
     <span id='pos#{root.id}'>
@@ -110,7 +109,7 @@ module TreeViewHelper
   end
   
   def get_max_nodes_count(root)
-    children = Composition.find(:all, :conditions => "parent_id = #{root.id}")
+    children = root.children
     if children.length == 0
       amount = 1
     else
@@ -125,7 +124,7 @@ module TreeViewHelper
 
   def get_max_depth(root, cur_level)
     amount = cur_level + 1
-    res = Composition.find(:all, :conditions => "parent_id = #{root.id}").collect{|c| get_max_depth(c, amount) }.max
+    res = root.children.collect{|c| get_max_depth(c, amount) }.max
     return res.blank? ? 1 : res + 1
   end
 
