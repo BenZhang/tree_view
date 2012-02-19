@@ -41,6 +41,8 @@ In controller
 @root = Policy.root
 ```
 
+In View
+
 ```ruby
 <%= tree_view(@root) %>
 ```
