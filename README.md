@@ -24,9 +24,10 @@ rails g tree_view:install
 include necessary javascript and stylesheet files.
 
 ```ruby
-//= require jquery.dimensions.min
-//= require jquery.drawinglibrary
-//= require jquery.svg.min
+//= require jquery.dimensions.min.js
+//= require jquery.drawinglibrary.js
+//= require jquery.svg.min.js
+//= require tree_view.drawline.js
 ```
 
 Example
@@ -34,14 +35,15 @@ Example
 
 If you have a model with tree structure (you might use tree or ancestry gem), you can simple invoke tree_view helper, and pass the root node of the tree.
 
+In controller
+
+```ruby
+@root = Policy.root
+```
+
 ```ruby
 <%= tree_view(@root) %>
 ```
-
-The attributes name is the name of the attribute that you want to display on the tree node.
-
-If you are using other name instead of parent_id in your database, you can simple set the parent_name to whatever you call it on your database, such as 
-build_tree_view(model, attribute name, :parent_name => 'parent')
 
 API Doc
 =======
