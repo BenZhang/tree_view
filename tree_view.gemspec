@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = TreeView::VERSION
   s.authors     = ["BenZhang"]
   s.email       = ["bzbnhang@gmail.com"]
-  s.homepage    = "benzheng.me"
-  s.summary     = %q{Generate a tree view}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://benzheng.me"
+  s.summary     = "Generate a tree view"
+  s.description = "view helper to generate tree view chart"
 
   s.rubyforge_project = "tree_view"
 
