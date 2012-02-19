@@ -15,13 +15,18 @@ Put this line of code to your gemfile
 gem 'tree_view'
 ```
 
+then run the install command to copy the assets to vendor.
+
+```ruby
+rails g tree_view:install
+```
 
 include necessary javascript and stylesheet files.
 
 ```ruby
-//=require jquery.dimensions.min
-//=require jquery.drawinglibrary
-//=require jquery.svg.min
+//= require jquery.dimensions.min
+//= require jquery.drawinglibrary
+//= require jquery.svg.min
 ```
 
 Example
@@ -37,5 +42,10 @@ The attributes name is the name of the attribute that you want to display on the
 
 If you are using other name instead of parent_id in your database, you can simple set the parent_name to whatever you call it on your database, such as 
 build_tree_view(model, attribute name, :parent_name => 'parent')
+
+API Doc
+=======
+
+Coming soon...
 
 Copyright (c) 2011 Ben Zhang, released under the MIT license
