@@ -11,7 +11,10 @@ Installation
 
 Put this line of code to your gemfile
 
+```ruby
 gem 'tree_view'
+```
+
 
 include necessary javascript and stylesheet files.
 
@@ -24,11 +27,11 @@ include necessary javascript and stylesheet files.
 Example
 =======
 
-If you have a model with tree structure (you might use tree or ancestry gem), you can simple invoke 
+If you have a model with tree structure (you might use tree or ancestry gem), you can simple invoke tree_view helper, and pass the root node of the tree.
 
-
+```ruby
 <%= tree_view(@root) %>
-
+```
 
 The attributes name is the name of the attribute that you want to display on the tree node.
 

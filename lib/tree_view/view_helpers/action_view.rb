@@ -1,7 +1,6 @@
 module TreeView
   
   module ActionView
-    include ViewHelpers
     
     def tree_view(root, opt = {}, &block)
       css = opt[:css] || "treeview"    
@@ -49,6 +48,6 @@ module TreeView
       html << "</li>"
       [html, script]
     end
-  end
-  
+    ::ActionView::Base.send :include, self
+  end  
 end
