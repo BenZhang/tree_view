@@ -1,6 +1,0 @@
-mysql:
-  :adapter: mysql
-  :host: localhost
-  :username: root
-  :password: 
-  :database: tree_view_test
