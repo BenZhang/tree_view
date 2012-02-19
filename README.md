@@ -15,10 +15,11 @@ gem 'tree_view'
 
 include necessary javascript and stylesheet files.
 
+```ruby
 //=require jquery.dimensions.min
 //=require jquery.drawinglibrary
 //=require jquery.svg.min
-
+```
 
 Example
 =======
