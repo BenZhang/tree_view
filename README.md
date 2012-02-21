@@ -9,7 +9,7 @@ http://benzhang.me/files/medium_tree_view.jpg
 Installation
 ===========
 
-Put this line of code to your gemfile
+Add this line to your gemfile
 
 ```ruby
 gem 'tree_view'

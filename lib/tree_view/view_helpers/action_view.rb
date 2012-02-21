@@ -36,7 +36,12 @@ module TreeView
           </span>
         </div>
       EOF
-      root.children.sort_by{|c| c.position }.each do |child|
+      if opt.has_key?(:order_by)
+        children = root.children.sort_by{|c| c.attributes[opt[:order_by]] }
+      else
+        children = root.children
+      end
+      children.each do |child|
         code = builder(child, opt, &block)
         result += code[0]
         if drawline
