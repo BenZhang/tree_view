@@ -5,11 +5,11 @@ module TreeView
     #
     # @param root      [model instance] the root node of the tree structure
     # @param opt       [Hash]           the options to generate tree nodes
-    #       :css       [String]         the warpper div's css
+    #       :css       [String]         the wrapper div's css
     #       :drawline  [true, false]    whether draw lines among each nodes
     #       :node_css  [String]         the css for each node
     #       :order_by  [sym]            the order of the children
-    # @param &block    [code block]     if you want to customse the content of each tree node, just passing a code block
+    # @param &block    [code block]     if you want to customise the content of each tree node, just passing a code block
     def tree_view(root, opt = {}, &block)
       css = opt[:css] || "treeview"    
       drawline = opt.has_key?(:drawline) ? opt[:drawline] : true
@@ -31,9 +31,7 @@ module TreeView
       if block_given?
         content = capture(root, &block)
       else
-        content = <<-EOF
-        #{image_position root.entry_type}<a href="#">#{root.entry_type == 'root' ? 'Organisation Chart' : truncate(root.name, :length => 20)}</a>
-        EOF
+        content = "<a href='#'>#{truncate(root.name, :length => 20)}</a>"
       end
       result, script = "", ""
       html = <<-EOF

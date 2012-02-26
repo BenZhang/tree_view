@@ -23,6 +23,7 @@ rails g tree_view:install
 
 include necessary javascript and stylesheet files.
 
+Add these files to your application.js
 ```ruby
 //= require jquery.dimensions.min.js
 //= require jquery.drawinglibrary.js
@@ -30,6 +31,10 @@ include necessary javascript and stylesheet files.
 //= require tree_view.drawline.js
 ```
 
+Add the stylesheet to your application.css
+```ruby
+//= require tree_view
+```
 Example
 =======
 
@@ -47,6 +52,8 @@ In View
 <%= tree_view(@root) %>
 ```
 
+To customise the content or each view you can simple pass a block and can 
+
 API Doc
 =======
 
@@ -55,11 +62,11 @@ API Doc
 #
 # @param root      [model instance] the root node of the tree structure
 # @param opt       [Hash]           the options to generate tree nodes
-#       :css       [String]         the warpper div's css
+#       :css       [String]         the wrapper div's css
 #       :drawline  [true, false]    whether draw lines among each nodes
 #       :node_css  [String]         the css for each node
 #       :order_by  [sym]            the order of the children
-# @param &block    [code block]     if you want to customse the content of each tree node, just passing a code block
+# @param &block    [code block]     if you want to customise the content of each tree node, just passing a code block
 def tree_view(root, opt = {}, &block)
 ```
 
