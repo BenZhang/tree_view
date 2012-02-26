@@ -52,7 +52,14 @@ In View
 <%= tree_view(@root) %>
 ```
 
-To customise the content or each view you can simple pass a block and can 
+To customise the content or each node you can simple pass a block. For instance, I want to display a little icon for each node like the example above.
+
+```ruby
+<%= tree_view(@root) do |node| %>
+	<%= image_tag "#{node.entry_type}.png" %>&nbsp;
+	<%= link_to node.name, "#" %>
+<% end %>
+```
 
 API Doc
 =======
