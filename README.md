@@ -24,6 +24,7 @@ rails g tree_view:install
 include necessary javascript and stylesheet files.
 
 Add these files to your application.js
+
 ```ruby
 //= require jquery.dimensions.min.js
 //= require jquery.drawinglibrary.js
@@ -32,6 +33,7 @@ Add these files to your application.js
 ```
 
 Add the stylesheet to your application.css
+
 ```ruby
 //= require tree_view
 ```
