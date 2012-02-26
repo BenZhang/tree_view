@@ -26,10 +26,10 @@ include necessary javascript and stylesheet files.
 Add these files to your application.js
 
 ```ruby
-//= require jquery.dimensions.min.js
-//= require jquery.drawinglibrary.js
-//= require jquery.svg.min.js
-//= require tree_view.drawline.js
+//= require jquery.dimensions.min
+//= require jquery.drawinglibrary
+//= require jquery.svg.min
+//= require tree_view.drawline
 ```
 
 Add the stylesheet to your application.css
