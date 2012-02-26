@@ -50,6 +50,17 @@ In View
 API Doc
 =======
 
-Coming soon...
+```ruby
+# generate html tree view helper
+#
+# @param root      [model instance] the root node of the tree structure
+# @param opt       [Hash]           the options to generate tree nodes
+#       :css       [String]         the warpper div's css
+#       :drawline  [true, false]    whether draw lines among each nodes
+#       :node_css  [String]         the css for each node
+#       :order_by  [sym]            the order of the children
+# @param &block    [code block]     if you want to customse the content of each tree node, just passing a code block
+def tree_view(root, opt = {}, &block)
+```
 
 Copyright (c) 2011 Ben Zhang, released under the MIT license
